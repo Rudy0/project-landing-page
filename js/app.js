@@ -31,7 +31,7 @@ function createNavItemList(){
     });
 }
 
-//set anchor links to section in the web
+// Set anchor links to section in the web
 function createNavAnchors(){
     const allSections = document.querySelectorAll("section");
     const anchor = ul.querySelectorAll("a");
@@ -45,7 +45,7 @@ createNavItemList();
 createNavAnchors();
 
 // Add class 'active' to section when near top of viewport
-//function to check if section is in viewport 
+// Function to check if section is in viewport 
 function isInView(e) {
     let section = e.getBoundingClientRect();
     return (
@@ -72,22 +72,12 @@ document.addEventListener("scroll", toggleActiveClass);
 $(document).ready(function(){
 // Add smooth scrolling to all links
 $("a").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
-    // Prevent default anchor click behavior
-    event.preventDefault();
-
-    // Store hash
-    var hash = this.hash;
-
-    // Using jQuery's animate() method to add smooth page scroll
-    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-    $('html, body').animate({
-        scrollTop: $(hash).offset().top
-    }, 800, function(){
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function(){
         window.location.hash = hash;
     });
     } 
