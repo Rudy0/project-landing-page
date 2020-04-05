@@ -68,7 +68,7 @@ function isInView(e) {
 document.addEventListener("scroll", toggleActiveClass);
 
 // Scroll to section on link click
-// smooth scroll when clicked on anchor
+// smooth scroll when click on anchor
 $(document).ready(function(){
 // Add smooth scrolling to all links
 $("a").on('click', function(event) {
